@@ -1,0 +1,355 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.inlineblock {
+  display: inline-block;
+  vertical-align: top;
+}
+/* шрифты */
+@font-face {
+  font-family: "myriadpro-regular";
+  src: url('../fonts/myriadpro-regular.eot');
+  src: url('../fonts/myriadpro-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-regular.woff') format('woff'), url('../fonts/myriadpro-regular.ttf') format('truetype'), url('../fonts/myriadpro-regular.svg#myriadpro-regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "myriadpro-bold";
+  src: url('../fonts/myriadpro-bold.eot');
+  src: url('../fonts/myriadpro-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-bold.woff') format('woff'), url('../fonts/myriadpro-bold.ttf') format('truetype'), url('../fonts/myriadpro-bold.svg#myriadpro-bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "myriadpro-boldcond";
+  src: url('../fonts/myriadpro-boldcond.eot');
+  src: url('../fonts/myriadpro-boldcond.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-boldcond.woff') format('woff'), url('../fonts/myriadpro-boldcond.ttf') format('truetype'), url('../fonts/myriadpro-boldcond.svg#myriadpro-boldcond') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "myriadpro-cond";
+  src: url('../fonts/myriadpro-cond.eot');
+  src: url('../fonts/myriadpro-cond.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-cond.woff') format('woff'), url('../fonts/myriadpro-cond.ttf') format('truetype'), url('../fonts/myriadpro-cond.svg#myriadpro-cond') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "myriadpro-semibold";
+  src: url('../fonts/myriadpro-semibold.eot');
+  src: url('../fonts/myriadpro-semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-semibold.woff') format('woff'), url('../fonts/myriadpro-semibold.ttf') format('truetype'), url('../fonts/myriadpro-semibold.svg#myriadpro-semibold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "myriadpro-semiboldit";
+  src: url('../fonts/myriadpro-semiboldit.eot');
+  src: url('../fonts/myriadpro-semiboldit.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-semiboldit.woff') format('woff'), url('../fonts/myriadpro-semiboldit.ttf') format('truetype'), url('../fonts/myriadpro-semiboldit.svg#myriadpro-semiboldit') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+/* общие стили */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: #fff;
+  font: 14px "myriadpro-regular", sans-serif;
+}
+a {
+  color: #2a99d8;
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 10px;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+/* прибиваем футер к низу */
+.wrapper {
+  height: auto;
+  min-height: 100%;
+  overflow: hidden;
+}
+.wrapper .empty {
+  height: 290px;
+}
+/* хэдер сайта */
+.header {
+  background-color: #272727;
+  background-image: -webkit-linear-gradient(top, #454545, #222222);
+  background-image: linear-gradient(to bottom, #454545, #222222);
+  border: 1px solid #383838;
+  border-bottom-color: #1c1c1c;
+  min-height: 100px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+}
+/* логотип */
+.logo {
+  float: left;
+  position: relative;
+  width: 160px;
+}
+.logo__text {
+  left: -9999px;
+  position: absolute;
+  top: 0;
+}
+.logo__img {
+  max-width: 150px;
+  max-height: 30px;
+}
+/* главное меню */
+.nav {
+  float: right;
+}
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.nav__item {
+  display: inline;
+}
+.nav__link {
+  color: #fff;
+  font: 1.428571em "myriadpro-bold", sans-serif;
+  margin-left: 30px;
+  text-shadow: 0 1px 1px #000;
+}
+.nav__link:hover,
+.nav__link--is-active {
+  text-shadow: 0 0 15px #fff;
+}
+/* слайдер */
+.bxslider {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bx-wrapper {
+  margin: 5.3191489% 0;
+}
+.bx-wrapper .bx-viewport {
+  border: none;
+  box-shadow: none;
+  left: 0;
+}
+.bx-wrapper .bx-pager {
+  bottom: 5px;
+}
+.bx-wrapper .bx-pager a {
+  background: #fff !important;
+  filter: alpha(opacity=70);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+.bx-wrapper .bx-pager a.active {
+  filter: alpha(opacity=100);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* блок описания */
+.description {
+  border-bottom: 1px solid #d2d0d0;
+  color: #959595;
+  font-size: 1.857em;
+  margin-bottom: 6.80851063%;
+  padding: 0 18.0851% 5.53191489%;
+  text-align: center;
+}
+.description b {
+  font-family: "myriadpro-bold";
+}
+/* блок постов */
+.posts {
+  margin-bottom: 5%;
+}
+.posts__list {
+  list-style: none;
+  margin: 0 0 0 -2.0833333%;
+  padding: 0;
+}
+.posts__list:before,
+.posts__list:after {
+  content: "";
+  display: table;
+}
+.posts__list:after {
+  clear: both;
+}
+.posts__item {
+  float: left;
+  margin-left: 2.083333%;
+  position: relative;
+  width: 22.916666%;
+}
+.posts__img {
+  max-width: 100%;
+  margin-bottom: 4.547707%;
+}
+.posts__title {
+  color: #494949;
+  font: 1.5714em "myriadpro-boldcond", sans-serif;
+  margin: 0 0 13.643123%;
+}
+.posts__data {
+  color: #999797;
+  font: bold italic 0.857em "myriadpro-semiboldit", sans-serif;
+}
+.posts__content {
+  margin-bottom: 40px;
+  min-height: 105px;
+}
+.posts__text {
+  color: #959595;
+  line-height: normal;
+}
+.posts__link {
+  font: bold italic 1em "myriadpro-semiboldit", sans-serif;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+/* футер сайта */
+.footer {
+  background-color: #ececec;
+  background-image: -webkit-linear-gradient(top, #ededed, #e0e0e0);
+  background-image: linear-gradient(to bottom, #ededed, #e0e0e0);
+  border-top: 1px solid #dedddd;
+  height: 290px;
+  margin-top: -290px;
+}
+.footer__wrapper {
+  margin-left: -2.083333%;
+  padding-top: 5.319148%;
+  position: relative;
+}
+.footer__wrapper:before,
+.footer__wrapper:after {
+  content: "";
+  display: table;
+}
+.footer__wrapper:after {
+  clear: both;
+}
+.footer__col {
+  float: left;
+  width: 22.916666%;
+  margin-left: 2.083333%;
+}
+.footer__col--posts .footer__text b {
+  font: bold 1.285em "myriadpro-boldcond", sans-serif;
+}
+.footer__col--posts .footer__date i {
+  font: bold italic 0.8571em "myriadpro-semiboldit", sans-serif;
+}
+.footer__title {
+  color: #8a8989;
+  font: bold 1em "myriadpro-boldcond", sans-serif;
+  margin-top: 0;
+  text-shadow: 0 1px 1px #fff;
+  text-transform: uppercase;
+}
+.footer__text {
+  color: #5d5c5c;
+}
+.footer__date {
+  color: #6a6969;
+  font-family: "myriadpro-cond";
+  margin-top: -3%;
+}
+.footer__proceed {
+  font: bold 1em "myriadpro-semibold", sans-serif;
+}
+/* галерея фликр */
+.flickr-gallery {
+  list-style: none;
+  margin: -5px 0 0 -8.333333%;
+  padding: 0;
+}
+.flickr-gallery:before,
+.flickr-gallery:after {
+  content: "";
+  display: table;
+}
+.flickr-gallery:after {
+  clear: both;
+}
+.flickr-gallery__item {
+  float: left;
+  margin-left: 8.333333%;
+  margin-bottom: 8.333333%;
+  width: 25%;
+}
+.flickr-gallery__link {
+  background-color: #fff;
+  display: block;
+  padding: 2px;
+}
+.flickr-gallery__link img {
+  display: block;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  /* слайдер */
+  .bx-wrapper {
+    display: none;
+  }
+  /* список постов */
+  .posts {
+    margin-bottom: 2%;
+  }
+  .posts__list {
+    margin: 0;
+  }
+  .posts__item {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .posts__img {
+    margin-bottom: 2%;
+  }
+  .posts__title {
+    margin-bottom: 2%;
+  }
+  .posts__content {
+    min-height: 0;
+  }
+  .posts__link {
+    bottom: 15px;
+  }
+  /* футер */
+  .wrapper .empty {
+    height: 0;
+  }
+  .footer {
+    height: auto;
+    margin-top: 0;
+  }
+  .footer__col {
+    width: 100%;
+  }
+}

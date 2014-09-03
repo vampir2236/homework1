@@ -1,0 +1,374 @@
+@import "mixins.less";
+
+
+/* шрифты */
+@myriad: "myriadpro-regular";
+.font-face(@myriad);
+
+@myriad-bold: "myriadpro-bold";
+.font-face(@myriad-bold, bold);
+
+@myriad-boldcond: "myriadpro-boldcond";
+.font-face(@myriad-boldcond, bold);
+
+@myriad-cond: "myriadpro-cond";
+.font-face(@myriad-cond);
+
+@myriad-semibold: "myriadpro-semibold";
+.font-face(@myriad-semibold, bold);
+
+@myriad-semiboldit: "myriadpro-semiboldit";
+.font-face(@myriad-semiboldit, bold, italic);
+
+
+/* общие стили */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    //transition: all .2s;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #fff;
+    font: 14px @myriad, sans-serif;
+}
+
+a {
+    color: #2a99d8;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px;
+    
+    .clearfix;
+}
+
+
+/* прибиваем футер к низу */
+
+@footer-size: 290px;
+.wrapper {
+    height: auto;
+    min-height: 100%;
+    overflow: hidden;
+
+    .empty {
+        height: @footer-size;
+    }
+}
+
+
+/* хэдер сайта */
+
+.header {
+    background-color: #272727;
+    background-image: -webkit-linear-gradient(top, #454545, #222);
+    background-image: linear-gradient(to bottom, #454545, #222);
+    border: 1px solid #383838;
+    border-bottom-color: #1c1c1c;
+    min-height: 100px;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+
+/* логотип */
+
+.logo {
+    float: left;
+    position: relative;
+    width: 160px;
+
+    &__text {
+        left: -9999px;
+        position: absolute;
+        top: 0;
+    }
+
+    &__img {
+        max-width: 150px;
+        max-height: 30px;
+    }
+}
+
+
+/* главное меню */
+
+.nav {
+    float: right;
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    &__item {
+        display: inline;
+    }
+
+    &__link {
+        color: #fff;
+        font: 1.428571em @myriad-bold, sans-serif;
+        margin-left: 30px;
+        text-shadow: 0 1px 1px #000;
+
+        &:hover,
+        &--is-active {
+            text-shadow: 0 0 15px #fff;
+        }
+    }
+}
+
+/* слайдер */
+
+.bxslider {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bx-wrapper {
+    margin: 5.3191489% 0;
+
+    .bx-viewport {
+        border: none;
+        box-shadow: none;
+        left: 0;
+    }
+
+    .bx-pager {
+        bottom: 5px;
+
+        a {
+            background: #fff !important;
+            .opacity(.7);
+
+            &.active {
+                .opacity()
+            }
+        }
+    }
+}
+
+
+/* блок описания */
+
+.description {
+    border-bottom: 1px solid #d2d0d0;
+    color: #959595;
+    font-size: 1.857em;
+    margin-bottom: 6.80851063%;
+    padding: 0 18.0851% 5.53191489%;
+    text-align: center;
+
+    b {
+        font-family: @myriad-bold;
+    }
+}
+
+
+/* блок постов */
+
+.posts {
+    margin-bottom: 5%;
+
+    &__list {
+        list-style: none;
+        margin: 0 0 0 -2.0833333%;
+        padding: 0;
+
+        .clearfix;
+    }
+
+    &__item {
+        float: left;
+        margin-left: 2.083333%;
+        position: relative;
+        width: 22.916666%;
+    }
+
+    &__img {
+        max-width: 100%;
+        margin-bottom: 4.547707%;
+    }
+
+    &__title {
+        color: #494949;
+        font: 1.5714em @myriad-boldcond, sans-serif;
+        margin: 0 0 13.643123%;
+    }
+
+    &__data {
+        color: #999797;
+        font: bold italic .857em @myriad-semiboldit, sans-serif;
+    }
+
+    &__content {
+        margin-bottom: 40px;
+        min-height: 105px;
+    }
+
+    &__text {
+        color: #959595;
+        line-height: normal;
+    }
+
+    &__link {
+        font: bold italic 1em @myriad-semiboldit, sans-serif;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+
+/* футер сайта */
+
+.footer {
+    background-color: #ececec;
+    background-image: -webkit-linear-gradient(top, #ededed, #e0e0e0);
+    background-image: linear-gradient(to bottom, #ededed, #e0e0e0);
+    border-top: 1px solid #dedddd;
+    height: 290px;
+    margin-top: -290px;
+
+    &__wrapper {
+        margin-left: -2.083333%;
+        padding-top: 5.319148%;
+        position: relative;
+
+        .clearfix;
+    }
+
+    &__col {
+        float: left;
+        width: 22.916666%;
+        margin-left: 2.083333%;
+
+        &--posts {
+            .footer__text {
+                b {
+                    font: bold 1.285em @myriad-boldcond, sans-serif;
+                }
+            }
+
+            .footer__date i {
+                font: bold italic .8571em @myriad-semiboldit, sans-serif;
+            }
+        }
+    }
+
+    &__title {
+        color: #8a8989;
+        font: bold 1em @myriad-boldcond, sans-serif;
+        margin-top: 0;
+        text-shadow: 0 1px 1px #fff;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        color: #5d5c5c;
+    }
+
+    &__date {
+        color: #6a6969;
+        font-family: @myriad-cond;
+        margin-top: -3%;
+    }
+
+    &__proceed {
+        font: bold 1em @myriad-semibold, sans-serif;
+    }
+}
+
+
+/* галерея фликр */
+.flickr-gallery {
+    list-style: none;
+    margin: -5px 0 0 -8.333333%;
+    padding: 0;
+    .clearfix;
+
+    &__item {
+        float: left;
+        margin-left: 8.333333%;
+        margin-bottom: 8.333333%;
+        width: 25%;
+    }
+
+    &__link {
+        background-color: #fff;
+        display: block;
+        padding: 2px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+// адаптив
+@media only screen and (max-width: 600px) {
+
+    /* слайдер */
+    .bx-wrapper {
+        display: none;
+    }
+
+    /* список постов */
+    .posts {
+        margin-bottom: 2%;
+
+        &__list {
+            margin: 0;
+        }
+
+        &__item {
+            width: 100%;
+            margin-bottom: 2%;
+        }
+
+        &__img {
+            margin-bottom: 2%;
+        }
+
+        &__title {
+            margin-bottom: 2%;
+        }
+
+        &__content {
+            min-height: 0;
+        }
+        
+        &__link {
+            bottom: 15px;
+        }
+    }
+
+    /* футер */
+    .wrapper .empty {
+        height: 0;
+    }
+
+    .footer {
+        height: auto;
+        margin-top: 0;
+
+        &__col {
+            width: 100%;
+        }
+    }
+}

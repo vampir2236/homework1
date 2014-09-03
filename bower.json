@@ -1,0 +1,20 @@
+{
+  "name": "Homework1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vampir2236/homework1",
+  "authors": [
+    "vampir2236 <vampir2236@mail.ru>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "1.11.1",
+    "normalize-css": "~3.0.1",
+    "bxslider-4": "~4.1.2"
+  }
+}
